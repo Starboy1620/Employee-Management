@@ -20,7 +20,6 @@ import com.employee.management.service.DepartmentService;
 @RestController
 public class DepartmentController {
 	
-	static final Logger logger  = LogManager.getLogger(DepartmentController.class.getName());
 	
 	@Autowired
 	private DepartmentService departmentService;
@@ -61,9 +60,5 @@ public class DepartmentController {
 			departmentService.deleteDepartmentByID(id);
 		}
 
-		// updating/ patching department by id
-		@PatchMapping("departments/{id}")
-		public void patchDepartmentByID(@RequestBody Department d, @PathVariable int id) {
-			departmentService.patchDepartment(d, id);
-		}
+	
 }

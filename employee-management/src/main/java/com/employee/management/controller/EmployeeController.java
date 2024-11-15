@@ -20,8 +20,7 @@ import com.employee.management.service.EmployeeService;
 @RestController
 public class EmployeeController {
 	
-	static final Logger logger  = LogManager.getLogger(EmployeeController.class.getName());
-
+	
 	@Autowired
 	private EmployeeService employeeService;
 	
@@ -61,9 +60,5 @@ public class EmployeeController {
 		employeeService.deleteEmployeeByID(id);
 	}
 
-	// updating/ patching employee by id
-	@PatchMapping("employees/{id}")
-	public void patchEmployeeByID(@RequestBody Employee e, @PathVariable int id) {
-		employeeService.patchEmployee(e, id);
-	}
+	
 }
